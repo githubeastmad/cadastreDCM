@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<se3d:StyleCatalog 
+xmlns:gco="http://www.isotc211.org/2005/gco" 
+xmlns:gmd="http://www.isotc211.org/2005/gmd" 
+xmlns:gml="http://www.opengis.net/gml" 
+xmlns:gml1="http://www.opengis.net/gml/3.2" 
+xmlns:gsr="http://www.isotc211.org/2005/gsr" 
+xmlns:gss="http://www.isotc211.org/2005/gss" 
+xmlns:gts="http://www.isotc211.org/2005/gts" 
+xmlns:ogc="http://www.opengis.net/fes/2.0" 
+xmlns:se3d="http://www.3dcadastre.com/se3d" 
+xmlns:ubn="http://www.3dcadastre.com/urban"
+xmlns:cnc="http://www.3dcadastre.com/CoreCNLand"
+xmlns:smil20="http://www.w3.org/2001/SMIL20/" 
+xmlns:smil20lang="http://www.w3.org/2001/SMIL20/Language" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:xml="http://www.w3.org/XML/1998/namespace" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>
+  <se3d:name>3DCadastreStyle</se3d:name>
+  <se3d:description>This file defines the style of 3D cadastre demo 2</se3d:description>
+  <se3d:camera>
+    <se3d:location>100 100 40</se3d:location>
+    <se3d:ExternalGeometry3D>
+          <se3d:OnlineResource xlink:type="simple" xlink:href="E:\OneDrive\AHU\Journal paper\journal of standardization\3dmodels\output\camera1.dae"></se3d:OnlineResource>
+          <se3d:Format>COLLADA</se3d:Format>
+        </se3d:ExternalGeometry3D>
+  </se3d:camera>
+  <se3d:light>
+    <se3d:location>100 100 40</se3d:location>
+    <se3d:ExternalGeometry3D>
+          <se3d:OnlineResource xlink:type="simple" xlink:href="E:\OneDrive\AHU\Journal paper\journal of standardization\3dmodels\output\light1.dae"></se3d:OnlineResource>
+          <se3d:Format>COLLADA</se3d:Format>
+        </se3d:ExternalGeometry3D>  
+  
+  </se3d:light>
+  <!-- ======================The first FeatureType style ================================================== -->
+  <se3d:FeatureTypeStyle>
+     <se3d:name>AbstractBuilding Portrayal</se3d:name>
+  <se3d:description>portray abstractbuilding by their usage</se3d:description>
+  <se3d:featureTypeName>cnc:AbstractBuilding</se3d:featureTypeName>
+  <se3d:Rule>
+    <se3d:name>CommercialAbstractBuilding</se3d:name>
+    <se3d:description>use area fill and boundarylines for commercial buildingUsage of spatialunit</se3d:description>
+    
+    <se3d:xquery>declare namespace cnc="http://www.3dcadastre.com/CoreCNLand"; declare namespace gml="http://www.opengis.net/gml/3.2";//cnc:AbstractBuilding[cnc:buildingUsage="31" or cnc:buildingUsage="30"] </se3d:xquery> !<!--underground-->
+  
+    <se3d:SolidSymbolizer>
+      <se3d:name>symbolizer for spatial units</se3d:name>
+      <se3d:description>This Symbolizer contains a LineComponent and an AreaComponent</se3d:description>
+        
+      
+      <se3d:AreaComponent>
+      		<se3d:Fill>
+      			<se3d:SvgParameter name="fill">#0f77f0</se3d:SvgParameter>
+      		</se3d:Fill>
+      </se3d:AreaComponent>
+    </se3d:SolidSymbolizer>
+  </se3d:Rule>
+  <se3d:Rule>
+      <se3d:name>ApartmentAbstractBuilding</se3d:name>
+      <se3d:description>use area fill for apartment building</se3d:description>
+      <se3d:xquery>declare namespace cnc="http://www.3dcadastre.com/CoreCNLand"; declare namespace gml="http://www.opengis.net/gml/3.2";//cnc:AbstractBuilding[cnc:buildingUsage="11" or cnc:buildingUsage="10"] </se3d:xquery>
+      <se3d:SolidSymbolizer>
+        <se3d:name>symbolizer for Abstract Building</se3d:name>
+        <se3d:description>This Symbolizer contains a AreaComponent</se3d:description>
+        <se3d:AreaComponent>
+          <se3d:Fill>
+            <se3d:SvgParameter name="fill">#448c3b</se3d:SvgParameter>
+          </se3d:Fill>
+          
+        
+      
+        </se3d:AreaComponent>
+      </se3d:SolidSymbolizer>
+    </se3d:Rule>
+  <se3d:Rule>
+      <se3d:name>OfficeAbstractBuilding</se3d:name>
+      <se3d:description>use different area fill and boundarylines for Office</se3d:description>
+      <se3d:xquery>declare namespace cnc="http://www.3dcadastre.com/CoreCNLand"; declare namespace gml="http://www.opengis.net/gml/3.2";//cnc:AbstractBuilding[cnc:buildingUsage="60"] </se3d:xquery>
+      <se3d:SolidSymbolizer>
+        <se3d:name>symbolizer for office abstract building</se3d:name>
+        <se3d:description>This Symbolizer contains a LineComponent and an AreaComponent</se3d:description>
+
+        <se3d:LineComponent>
+          <se3d:Stroke>
+            <se3d:SvgParameter name="stroke-width">0.3</se3d:SvgParameter>
+            <se3d:SvgParameter name="stroke">#ff4826</se3d:SvgParameter>
+          </se3d:Stroke>
+        </se3d:LineComponent>
+        <se3d:AreaComponent>
+          <se3d:Fill>
+            <se3d:SvgParameter name="fill">#a1ab79</se3d:SvgParameter>
+          </se3d:Fill>
+
+
+
+        </se3d:AreaComponent>
+      </se3d:SolidSymbolizer>
+    </se3d:Rule>
+  <se3d:Rule>
+      <se3d:name>OtherAbstractBuilding</se3d:name>
+      <se3d:description>use different area fill and boundarylines for Other BuildingUsage</se3d:description>
+      <se3d:xquery>declare namespace cnc="http://www.3dcadastre.com/CoreCNLand"; declare namespace gml="http://www.opengis.net/gml/3.2";//cnc:AbstractBuilding[cnc:buildingUsage="80"] </se3d:xquery>
+      <se3d:SolidSymbolizer>
+        <se3d:name>symbolizer for Other usage type</se3d:name>
+        <se3d:description>This Symbolizer contains a LineComponent and an AreaComponent</se3d:description>
+
+        
+        <se3d:AreaComponent>
+          <se3d:Fill>
+            <se3d:SvgParameter name="fill">#a8a8a7</se3d:SvgParameter>
+          </se3d:Fill>
+
+
+
+        </se3d:AreaComponent>
+      </se3d:SolidSymbolizer>
+    </se3d:Rule>
+  <se3d:Rule>
+      <se3d:name>UnknownBuildingUsage</se3d:name>
+      <se3d:description>this is the style for unknown building usage portrayal</se3d:description>
+      <se3d:xquery>declare namespace cnc="http://www.3dcadastre.com/CoreCNLand"; declare namespace gml="http://www.opengis.net/gml/3.2";//cnc:AbstractBuilding[cnc:buildingUsage=""] </se3d:xquery>
+      <se3d:SolidSymbolizer>
+        <se3d:name>symbolizer for spatial units</se3d:name>
+        <se3d:description>This Symbolizer contains a LineComponent and an AreaComponent</se3d:description>
+
+        
+        <se3d:AreaComponent>
+          <se3d:Fill>
+            <se3d:SvgParameter name="fill">#363434</se3d:SvgParameter>
+          </se3d:Fill>
+
+
+
+        </se3d:AreaComponent>
+      </se3d:SolidSymbolizer>
+    </se3d:Rule>
+  </se3d:FeatureTypeStyle>
+
+
+
+  <!-- ======================The second FeatureType style ================================================== -->
+  <se3d:FeatureTypeStyle>
+    <se3d:name>parcel style</se3d:name>
+    <se3d:description>cadastral parcel portrayal, including surface and underground</se3d:description>
+    <se3d:featureTypeName>cnc:CadastralParcel</se3d:featureTypeName>
+    <se3d:Rule>
+      <se3d:name>surface parcel</se3d:name>
+      <se3d:description>surface cadastre parcel portrayl</se3d:description>
+      <se3d:xquery>declare namespace cnc="http://www.3dcadastre.com/CoreCNLand"; declare namespace gml="http://www.opengis.net/gml/3.2";//cnc:CadastralParcel[cnc:rrrSettingType="2"] </se3d:xquery>
+
+      <se3d:AreaSymbolizer>
+        <se3d:name>symbolizer for parcel</se3d:name>
+        <se3d:description>This Symbolizer contains PointComponent, LineComponent and an AreaComponent</se3d:description>
+        <se3d:PointComponent>
+          <se3d:Geometry3D>
+            <se3d:transformation>
+              <se3d:scale>
+                1 1 1
+              </se3d:scale>
+              <se3d:translate>
+              -2 -2 0
+            </se3d:translate>
+            </se3d:transformation>
+        <se3d:ExternalGeometry3D>
+          <se3d:OnlineResource xlink:type="simple" xlink:href="E:\OneDrive\AHU\Journal paper\journal of standardization\3dmodels\output\cube.dae"></se3d:OnlineResource>
+          <se3d:Format>COLLADA</se3d:Format>
+        </se3d:ExternalGeometry3D> 
+          </se3d:Geometry3D>
+
+        </se3d:PointComponent>
+        <se3d:LineComponent>
+          <se3d:Stroke>
+            <se3d:SvgParameter name="stroke-width">2</se3d:SvgParameter>
+            <se3d:SvgParameter name="stroke">#0a0201</se3d:SvgParameter>
+          </se3d:Stroke>
+        </se3d:LineComponent>
+        <se3d:AreaComponent>
+          <se3d:Fill>
+            <se3d:SvgParameter name="fill">#6a9ae8</se3d:SvgParameter>
+          </se3d:Fill>
+        </se3d:AreaComponent>
+      </se3d:AreaSymbolizer>
+    </se3d:Rule>
+    <se3d:Rule>
+        <se3d:name>undergroundUnboundPortrayal</se3d:name>
+        <se3d:description>use unbounded3Dstroke to represent the boundaries</se3d:description>
+        <se3d:xquery>declare namespace cnc="http://www.3dcadastre.com/CoreCNLand"; declare namespace gml="http://www.opengis.net/gml/3.2";//cnc:CadastralParcel[cnc:rrrSettingType="3"] </se3d:xquery>
+
+        <se3d:AreaSymbolizer>
+          <se3d:transformation>
+            <se3d:scale>
+              1 1 1
+            </se3d:scale>
+            <se3d:translate>
+              0 0 -0.01
+            </se3d:translate>
+          </se3d:transformation>
+          <se3d:name>symbolizer for cadastral parcel</se3d:name>
+          <se3d:description>This Symbolizer contains a LineComponent and an AreaComponent</se3d:description>
+        
+          <se3d:LineComponent>
+            <se3d:Stroke>
+              <se3d:SvgParameter name="stroke-width">0.5</se3d:SvgParameter>
+              <se3d:SvgParameter name="stroke">#A9A9A9</se3d:SvgParameter>
+              <se3d:Unbounded3DStroke>
+                <height>-9</height>
+              </se3d:Unbounded3DStroke>
+            </se3d:Stroke>
+          </se3d:LineComponent>
+          
+        </se3d:AreaSymbolizer>
+      </se3d:Rule>
+  </se3d:FeatureTypeStyle>
+
+
+  
+  
+
+</se3d:StyleCatalog>

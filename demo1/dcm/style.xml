@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<se3d:StyleCatalog 
+xmlns:gco="http://www.isotc211.org/2005/gco" 
+xmlns:gmd="http://www.isotc211.org/2005/gmd" 
+xmlns:gml="http://www.opengis.net/gml" 
+xmlns:gml1="http://www.opengis.net/gml/3.2" 
+xmlns:gsr="http://www.isotc211.org/2005/gsr" 
+xmlns:gss="http://www.isotc211.org/2005/gss" 
+xmlns:gts="http://www.isotc211.org/2005/gts" 
+xmlns:ogc="http://www.opengis.net/fes/2.0" 
+xmlns:se3d="http://www.3dcadastre.com/se3d" 
+xmlns:ubn="http://www.3dcadastre.com/urban"
+xmlns:cnc="http://www.3dcadastre.com/CoreCNLand"
+xmlns:smil20="http://www.w3.org/2001/SMIL20/" 
+xmlns:smil20lang="http://www.w3.org/2001/SMIL20/Language" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:xml="http://www.w3.org/XML/1998/namespace" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>
+  <se3d:name>3DCadastreStyle</se3d:name>
+  <se3d:description>This file defines the style of 3D cadastre</se3d:description>
+  <se3d:camera>
+    <se3d:location>100 100 40</se3d:location>
+    <se3d:ExternalGeometry3D>
+          <se3d:OnlineResource xlink:type="simple" xlink:href="E:\OneDrive\AHU\Journal paper\journal of standardization\3dmodels\output\camera1.dae"></se3d:OnlineResource>
+          <se3d:Format>COLLADA</se3d:Format>
+        </se3d:ExternalGeometry3D>
+  </se3d:camera>
+  <se3d:light>
+    <se3d:location>100 100 40</se3d:location>
+    <se3d:ExternalGeometry3D>
+          <se3d:OnlineResource xlink:type="simple" xlink:href="E:\OneDrive\AHU\Journal paper\journal of standardization\3dmodels\output\light1.dae"></se3d:OnlineResource>
+          <se3d:Format>COLLADA</se3d:Format>
+        </se3d:ExternalGeometry3D>  
+  
+  </se3d:light>
+  <!-- ======================The first FeatureType style ================================================== -->
+  <se3d:FeatureTypeStyle>
+     <se3d:name>boundaryfacestring color and box</se3d:name>
+  <se3d:description>This is the first test symbology for cadastre portrayal</se3d:description>
+  <se3d:featureTypeName>cnc:SpatialUnit</se3d:featureTypeName>
+  <se3d:Rule>
+    <se3d:name>SpatialUnit</se3d:name>
+    <se3d:description>use different area fill and boundarylines for different spatialunit</se3d:description>
+    
+    <se3d:xquery>declare namespace cnc="http://www.3dcadastre.com/CoreCNLand"; declare namespace gml="http://www.opengis.net/gml/3.2";//cnc:LA_SpatialUnit[@gml:id="SpatialUnit_18" or @gml:id="SpatialUnit_19" or @gml:id="SpatialUnit_20"] </se3d:xquery>
+    <se3d:legend>
+      <se3d:Geometry3D>
+          <se3d:transformation>
+            <se3d:scale>
+            0.002 0.002 0.002
+          </se3d:scale>
+              
+          </se3d:transformation>
+            
+          
+        <se3d:ExternalGeometry3D>
+          <se3d:OnlineResource xlink:type="simple" xlink:href="E:\OneDrive\AHU\Journal paper\journal of standardization\3dmodels\output\legend.dae"></se3d:OnlineResource>
+          <se3d:Format>COLLADA</se3d:Format>
+        </se3d:ExternalGeometry3D>    
+      
+        </se3d:Geometry3D>
+      <se3d:semanticLocation>A</se3d:semanticLocation>
+    </se3d:legend>
+    <se3d:SolidSymbolizer>
+      <se3d:name>symbolizer for spatial units</se3d:name>
+      <se3d:description>This Symbolizer contains a LineComponent and an AreaComponent</se3d:description>
+      <se3d:transformation>
+        <se3d:translate>
+          0 0 2
+        </se3d:translate>
+      </se3d:transformation>
+      <se3d:PointComponent>
+        <se3d:Geometry3D>
+          <se3d:transformation>
+            <se3d:scale>
+            0.002 0.002 0.002
+          </se3d:scale>
+              
+          </se3d:transformation>
+            
+          
+        <se3d:ExternalGeometry3D>
+          <se3d:OnlineResource xlink:type="simple" xlink:href="E:\OneDrive\AHU\Journal paper\journal of standardization\3dmodels\output\ball_green.dae"></se3d:OnlineResource>
+          <se3d:Format>COLLADA</se3d:Format>
+        </se3d:ExternalGeometry3D>    
+      
+        </se3d:Geometry3D>
+          
+      </se3d:PointComponent>
+      <se3d:LineComponent>
+      	<se3d:Stroke>
+      		<se3d:SvgParameter name="stroke-width">0.04</se3d:SvgParameter>
+      		<se3d:SvgParameter name="stroke">#f04336</se3d:SvgParameter>
+      	</se3d:Stroke> 
+      </se3d:LineComponent>
+      <se3d:AreaComponent>
+      		<se3d:Fill>
+      			<se3d:SvgParameter name="fill">#0f77f0</se3d:SvgParameter>
+      		</se3d:Fill>
+      </se3d:AreaComponent>
+    </se3d:SolidSymbolizer>
+  </se3d:Rule>
+  </se3d:FeatureTypeStyle>
+
+   ======================The second FeatureType style ================================================== 
+  <se3d:FeatureTypeStyle>
+    <se3d:name>boundaryfacestring color and box2</se3d:name>
+    <se3d:description>This is the first test symbology for cadastre portrayal</se3d:description>
+    <se3d:featureTypeName>cnc:SpatialUnit</se3d:featureTypeName>
+    <se3d:Rule>
+      <se3d:name>SpatialUnit2</se3d:name>
+      <se3d:description>use different area fill and boundarylines for different spatialunit</se3d:description>
+      <se3d:xquery>declare namespace cnc="http://www.3dcadastre.com/CoreCNLand"; declare namespace gml="http://www.opengis.net/gml/3.2";//cnc:LA_SpatialUnit[@gml:id="SpatialUnit_21"] </se3d:xquery>
+      <se3d:SolidSymbolizer>
+        <se3d:name>symbolizer for spatial units</se3d:name>
+        <se3d:description>This Symbolizer contains a LineComponent and an AreaComponent</se3d:description>
+        <se3d:transformation>
+          <se3d:translate>
+            0 0 4
+          </se3d:translate>
+        </se3d:transformation>
+        <se3d:PointComponent>
+          <se3d:Geometry3D>
+            <se3d:transformation>
+              
+                <se3d:scale>
+                  0.0001 0.0001 0.0001
+                </se3d:scale>
+                <se3d:translate>
+                  0 -0.05 0
+                </se3d:translate>
+              
+            </se3d:transformation>
+            <se3d:ExternalGeometry3D>
+              <se3d:OnlineResource xlink:type="simple" xlink:href="E:\OneDrive\AHU\Journal paper\journal of standardization\3dmodels\output\tetrahedron.dae"></se3d:OnlineResource>
+              <se3d:Format>COLLADA</se3d:Format>
+            </se3d:ExternalGeometry3D>
+
+          </se3d:Geometry3D>
+
+        </se3d:PointComponent>
+        <se3d:LineComponent>
+          <se3d:Stroke>
+            <se3d:SvgParameter name="stroke-width">0.02</se3d:SvgParameter>
+            <se3d:SvgParameter name="stroke">#f04826</se3d:SvgParameter>
+          </se3d:Stroke>
+        </se3d:LineComponent>
+        <se3d:AreaComponent>
+          <se3d:Fill>
+            <se3d:SvgParameter name="fill">#0f00f0</se3d:SvgParameter>
+          </se3d:Fill>
+          <transformation>
+            <se3d:semanticTransformation>
+            <se3d:direction>outer</se3d:direction>    
+            <se3d:distance>1.0</se3d:distance>
+            </se3d:semanticTransformation>
+          </transformation>
+        
+      
+        </se3d:AreaComponent>
+      </se3d:SolidSymbolizer>
+    </se3d:Rule>
+  </se3d:FeatureTypeStyle>
+  
+  <!-- ======================The second FeatureType style ================================================== --><!--
+  <se3d:FeatureTypeStyle>
+     <se3d:name>Baunit differentiation</se3d:name>
+  <se3d:description>This is the second test symbology for cadastre portrayal</se3d:description>
+  <se3d:featureTypeName>cnc:SpatialUnit</se3d:featureTypeName>
+  <se3d:Rule>
+    <se3d:name>baunit_diff</se3d:name>
+    <se3d:description>use different area fill for different parcel </se3d:description>
+    <ogc:Filter>
+    	<ogc:ResourceId rid="SpatialUnit_1"/>
+   		<ogc:ResourceId rid="SpatialUnit_2"/>
+   		<ogc:ResourceId rid="SpatialUnit_3"/>
+    </ogc:Filter>
+    <se3d:AreaSymbolizer>
+      <se3d:name>se3d:name</se3d:name>
+      <se3d:description>se3d:description</se3d:description>
+      <se3d:PointComponent>
+        <se3d:Geometry3D>
+          <se3d:transformation>
+            <se3d:scale>
+              0.1 0.1 0.1
+            </se3d:scale>
+          <se3d:translate>
+              -2 -2 0
+          </se3d:translate>
+          </se3d:transformation>
+        <se3d:ExternalGeometry3D>
+          <se3d:OnlineResource xlink:type="simple" xlink:href="E:\OneDrive\AHU\Journal paper\journal of standardization\3dmodels\output\cube.dae"></se3d:OnlineResource>
+          <se3d:Format>COLLADA</se3d:Format>
+        </se3d:ExternalGeometry3D>    
+        </se3d:Geometry3D>
+      </se3d:PointComponent>
+      <se3d:LineComponent>
+      	<se3d:Stroke>
+      		<se3d:SvgParameter name="stroke-width">0.08</se3d:SvgParameter>
+      		<se3d:SvgParameter name="stroke">#ff00ff</se3d:SvgParameter>
+      	</se3d:Stroke> 
+      </se3d:LineComponent>
+      <se3d:AreaComponent>
+      		<se3d:Fill>
+      			<se3d:SvgParameter name="fill">#ffffcc</se3d:SvgParameter>
+      		</se3d:Fill>
+      </se3d:AreaComponent>
+    </se3d:AreaSymbolizer>
+  </se3d:Rule>
+  </se3d:FeatureTypeStyle>-->
+
+</se3d:StyleCatalog>
